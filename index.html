@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Profile: Aditya Jayashankar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes text-flicker {
+            0%, 100% { opacity: 1; text-shadow: 0 0 5px #f0abfc, 0 0 10px #f0abfc, 0 0 15px #d946ef, 0 0 20px #d946ef; }
+            49% { opacity: 1; text-shadow: 0 0 5px #f0abfc, 0 0 10px #f0abfc, 0 0 15px #d946ef, 0 0 20px #d946ef; }
+            50% { opacity: 0.8; text-shadow: none; }
+            51% { opacity: 1; text-shadow: 0 0 5px #f0abfc, 0 0 10px #f0abfc, 0 0 15px #d946ef, 0 0 20px #d946ef; }
+        }
+        @keyframes border-flicker {
+            0% { box-shadow: inset 0 0 10px 2px #a5f3fc, 0 0 10px 2px #a5f3fc; }
+            2% { box-shadow: inset 0 0 10px 2px #a5f3fc, 0 0 10px 2px #a5f3fc; }
+            4% { box-shadow: none; }
+            8% { box-shadow: inset 0 0 10px 2px #a5f3fc, 0 0 10px 2px #a5f3fc; }
+            100% { box-shadow: inset 0 0 10px 2px #a5f3fc, 0 0 10px 2px #a5f3fc; }
+        }
+
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #020617; /* slate-950 */
+            color: #d1d5db;
+        }
+        #bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.1;
+            filter: grayscale(100%) contrast(150%);
+        }
+        .operator-name {
+            font-family: 'Orbitron', sans-serif;
+            animation: text-flicker 3s linear infinite;
+            color: #f5d0fe; /* fuchsia-200 */
+        }
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.25rem;
+            color: #67e8f9; /* cyan-300 */
+            text-shadow: 0 0 5px #22d3ee;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #67e8f9;
+        }
+        .mission-card {
+            background-color: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid #1e293b;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .mission-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(165, 243, 252, 0.4);
+        }
+        .skill-chip {
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 700;
+            border: 1px solid #334155;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+        }
+        .skill-chip:hover {
+            background-color: #d946ef;
+            color: #ffffff;
+            border-color: #f0abfc;
+            text-shadow: 0 0 5px #fff;
+        }
+        .section-bg {
+             background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9));
+             backdrop-filter: blur(12px);
+             border: 1px solid #334155;
+             padding: 1.5rem;
+             margin-bottom: 3rem;
+             animation: border-flicker 5s linear infinite;
+        }
+        .achievement {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            color: #a3e635; /* lime-400 */
+            text-shadow: 0 0 5px #a3e635;
+        }
+    </style>
+</head>
+<body>
+
+    <video autoplay muted loop id="bg-video">
+        <source src="goku-ultra-instinct_2.3840x2160.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Main Container -->
+    <div class="container mx-auto max-w-6xl p-4 sm:p-6 lg:p-8">
+
+        <!-- Header Section -->
+        <header class="text-center mb-16">
+            <h1 class="operator-name text-4xl sm:text-6xl">ADITYA JAYASHANKAR</h1>
+            <p class="text-lg sm:text-xl text-cyan-300 mt-4">// Data Scientist_ // ML Engineer_</p>
+        </header>
+
+        <!-- Profile & Stats Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            <section id="profile" class="lg:col-span-2 section-bg">
+                <h2 class="section-title">OPERATOR_DOSSIER</h2>
+                <p class="text-md leading-relaxed text-gray-300">
+                    Netrunner with advanced proficiency in constructing and deploying end-to-end machine learning pipelines. Specializes in neural net integration and LLM interfacing for real-time applications. Fluent in Scikit-learn, Flask, Docker, and Streamlit protocols for rapid system deployment.
+                </p>
+            </section>
+             <section id="stats" class="lg:col-span-1 section-bg">
+                <h2 class="section-title">COMMS_LINK</h2>
+                <div class="space-y-2 text-sm">
+                    <p><span class="text-cyan-400">VOX:</span> <a href="tel:8549859986" class="text-fuchsia-400 hover:text-fuchsia-300">8549859986</a></p>
+                    <p><span class="text-cyan-400">DATA:</span> <a href="mailto:adityajayashankar@gmail.com" class="text-fuchsia-400 hover:text-fuchsia-300">adityajayashankar@gmail.com</a></p>
+                    <p><span class="text-cyan-400">REPO:</span> <a href="https://github.com/adityajayashankar" target="_blank" rel="noopener noreferrer" class="text-fuchsia-400 hover:text-fuchsia-300">github.com/adityajayashankar</a></p>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- Projects Section -->
+        <section id="projects" class="mb-12">
+            <h2 class="section-title text-center">MISSION_LOG</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Mission Card 1 -->
+                <div class="mission-card">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-fuchsia-400 mb-2">Operation: Chat Bot</h3>
+                        <p class="text-gray-300 mb-4 flex-grow">Engineered a conversational AI using LangChain & GPT-3.5 frameworks. Deployed via Streamlit for direct user interfacing.</p>
+                        <a href="https://github.com/adityajayashankar/ChatBot" target="_blank" rel="noopener noreferrer" class="mt-auto bg-cyan-500/10 border border-cyan-500 text-cyan-300 font-bold py-2 px-4 hover:bg-cyan-500/20 transition-colors inline-flex items-center gap-2 self-start">
+                            EXTRACT_DATA
+                        </a>
+                    </div>
+                </div>
+                <!-- Mission Card 2 -->
+                <div class="mission-card">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-fuchsia-400 mb-2">Operation: Score Predictor</h3>
+                        <p class="text-gray-300 mb-4 flex-grow">Constructed an automated ML pipeline for performance analysis. Containerized with Docker and deployed with a CI/CD protocol on Render.</p>
+                        <a href="https://github.com/adityajayashankar/ML_project_with_CICD_pipeline" target="_blank" rel="noopener noreferrer" class="mt-auto bg-cyan-500/10 border border-cyan-500 text-cyan-300 font-bold py-2 px-4 hover:bg-cyan-500/20 transition-colors inline-flex items-center gap-2 self-start">
+                           EXTRACT_DATA
+                        </a>
+                    </div>
+                </div>
+                <!-- Mission Card 3 -->
+                <div class="mission-card">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-fuchsia-400 mb-2">Operation: Sequence Detector</h3>
+                        <p class="text-gray-300 mb-4 flex-grow">Designed a layered testbench for FSM sequence detection. Achieved >90% functional coverage for high-reliability verification.</p>
+                        <a href="https://github.com/adityajayashankar/Layered-Testbench" target="_blank" rel="noopener noreferrer" class="mt-auto bg-cyan-500/10 border border-cyan-500 text-cyan-300 font-bold py-2 px-4 hover:bg-cyan-500/20 transition-colors inline-flex items-center gap-2 self-start">
+                            EXTRACT_DATA
+                        </a>
+                    </div>
+                </div>
+                <!-- Mission Card 4 -->
+                <div class="mission-card">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-fuchsia-400 mb-2">Operation: EEG Sensor (Active)</h3>
+                        <p class="text-gray-300 mb-4 flex-grow">Fabricating an analog EEG sensor using Cadence Virtuoso. Developing full-custom layout for direct chip integration.</p>
+                        <a href="https://github.com/adityajayashankar/EEG_Sensor" target="_blank" rel="noopener noreferrer" class="mt-auto bg-cyan-500/10 border border-cyan-500 text-cyan-300 font-bold py-2 px-4 hover:bg-cyan-500/20 transition-colors inline-flex items-center gap-2 self-start">
+                           EXTRACT_DATA
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills & Training Wrapper -->
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+            <section id="skills" class="lg:col-span-3 section-bg">
+                <h2 class="section-title">LOADOUT</h2>
+                <div class="flex flex-wrap gap-3">
+                    <div class="skill-chip">Python</div>
+                    <div class="skill-chip">SystemVerilog</div>
+                    <div class="skill-chip">TensorFlow</div>
+                    <div class="skill-chip">Pandas</div>
+                    <div class="skill-chip">NumPy</div>
+                    <div class="skill-chip">Seaborn</div>
+                    <div class="skill-chip">MatplotLib</div>
+                    <div class="skill-chip">LangChain</div>
+                    <div class="skill-chip">Relevance AI</div>
+                    <div class="skill-chip">Git</div>
+                    <div class="skill-chip">Xilinx Vivado</div>
+                    <div class="skill-chip">Cadence Virtuoso</div>
+                    <div class="skill-chip">N8N</div>
+                    <div class="skill-chip">Docker</div>
+                </div>
+            </section>
+
+            <section id="education" class="lg:col-span-2 section-bg">
+                <h2 class="section-title">TRAINING_SIMS</h2>
+                 <div class="space-y-4">
+                    <div>
+                        <h3 class="font-bold text-lg text-fuchsia-400">PES University</h3>
+                        <p class="text-gray-300 text-sm">B.Tech // 2022-2026</p>
+                        <div class="achievement text-xs"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><span>GPA: 7.6</span></div>
+                        <div class="achievement text-xs"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><span>Distinction Certs x2</span></div>
+                    </div>
+                     <div>
+                        <h3 class="font-bold text-lg text-fuchsia-400">ASC PU College</h3>
+                        <p class="text-gray-300 text-sm">Pre-University // 2020-2022</p>
+                        <div class="achievement text-xs"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><span>Score: 92%</span></div>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-fuchsia-400">VLS International School</h3>
+                        <p class="text-gray-300 text-sm">Foundational // 2008-2020</p>
+                        <div class="achievement text-xs"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><span>GPA: 9.4</span></div>
+                        <div class="achievement text-xs"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><span>Title: Student Council President</span></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Certifications Section -->
+        <section id="certifications" class="section-bg">
+            <h2 class="section-title">CERTIFICATION_UPLOADS</h2>
+            <div class="space-y-2 text-sm">
+                <p><span class="text-cyan-400 font-bold mr-2">&gt;</span> <a href="https://www.freecodecamp.org/certification/adityajayashankar/responsive-web-design" target="_blank" rel="noopener noreferrer" class="text-fuchsia-400 hover:text-fuchsia-300">freeCodeCamp - Responsive Web Design</a></p>
+                <p><span class="text-cyan-400 font-bold mr-2">&gt;</span> <a href="https://drive.google.com/file/d/1utU0ePp1j3ck6DdnepQA-0ZMuXLxsKDr/view" target="_blank" rel="noopener noreferrer" class="text-fuchsia-400 hover:text-fuchsia-300">BCG - Intro to Strategy Consulting Simulation</a></p>
+                <p><span class="text-cyan-400 font-bold mr-2">&gt;</span> <a href="#" target="_blank" rel="noopener noreferrer" class="text-fuchsia-400 hover:text-fuchsia-300">GitHub Foundations (Placeholder)</a></p>
+            </div>
+        </section>
+
+        <section id="coursework" class="section-bg">
+            <h2 class="section-title">DECRYPTED_KNOWLEDGE</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-2 text-sm">
+                <p class="text-gray-400">Machine Learning</p>
+                <p class="text-gray-400">Deep Learning</p>
+                <p class="text-gray-400">Large Language Models</p>
+                <p class="text-gray-400">Data Analysis</p>
+                <p class="text-gray-400">Computer Networking</p>
+                <p class="text-gray-400">Probability and Statistics</p>
+                <p class="text-gray-400">Computer Architecture</p>
+                <p class="text-gray-400">Linear Algebra</p>
+                <p class="text-gray-400">Verification of Digital Systems</p>
+                <p class="text-gray-400">Data Structures and Algorithms</p>
+            </div>
+        </section>
+
+        <footer class="text-center mt-16 pt-8">
+            <p class="text-gray-600 text-xs tracking-widest">// END_OF_TRANSMISSION //</p>
+        </footer>
+    </div>
+</body>
+</html>
